@@ -15,7 +15,7 @@ class Compra extends Model
         "total",
     ];
 
-    public function productos(){ // una compra puede pertenecer a varias instancias de Producto y viceversa
+    public function producto(){ // una compra puede pertenecer a varias instancias de Producto y viceversa
         return $this->belongsToMany(Producto::class)->withPivot("precio", 'cantidad', 'subtotal')->withTimestamps();
     }
 }
